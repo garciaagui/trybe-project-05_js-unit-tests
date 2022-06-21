@@ -31,13 +31,32 @@ const productDetails = require('../src/productDetails');
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
-    fail('Teste vazio!');
+    // fail('Teste vazio!');
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se productDetails é uma função.
+    expect(typeof productDetails).toBe('function');
+
     // Teste se o retorno da função é um array.
+    expect(Array.isArray(productDetails('Keyboard', 'Mouse'))).toBeTruthy();
+
     // Teste se o array retornado pela função contém dois itens dentro.
+    expect(productDetails('Motherboard', 'Processor')).toHaveLength(2);
+
     // Teste se os dois itens dentro do array retornado pela função são objetos.
+    const values = productDetails('HD', 'SSD');
+    expect(typeof values[0] === 'object' 
+    && values[0] !== null
+    && !Array.isArray(values[0])
+    && typeof values[1] === 'object' 
+    && values[1] !== null
+    && !Array.isArray(values[1])).toBeTruthy();
+
     // Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.
+    expect(productDetails('Power Supply', 'Fan')[0]).not.toEqual(productDetails('Power Supply', 'Fan')[1]);
+
     // Teste se os dois productIds terminam com 123.
+    const productId0 = productDetails('Monitor', 'Speakers')[0].details.productId
+    const productId1 = productDetails('Monitor', 'Speakers')[1].details.productId
+    expect(productId0.endsWith('123') && productId1.endsWith('123')).toBeTruthy();
   });
 });
