@@ -43,20 +43,15 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     expect(productDetails('Motherboard', 'Processor')).toHaveLength(2);
 
     // Teste se os dois itens dentro do array retornado pela função são objetos.
-    const values = productDetails('HD', 'SSD');
-    expect(typeof values[0] === 'object' 
-    && values[0] !== null
-    && !Array.isArray(values[0])
-    && typeof values[1] === 'object' 
-    && values[1] !== null
-    && !Array.isArray(values[1])).toBeTruthy();
+    const products1 = productDetails('HD', 'SSD');
+    expect(products1.every((element) => typeof element === 'object' && !Array.isArray(element) && element !== null)).toBeTruthy();
 
     // Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.
-    expect(productDetails('Power Supply', 'Fan')[0]).not.toEqual(productDetails('Power Supply', 'Fan')[1]);
+    const products2 = productDetails('Power Supply', 'Fan');
+    expect(products2[0]).not.toEqual(products2[1]);
 
     // Teste se os dois productIds terminam com 123.
-    const productId0 = productDetails('Monitor', 'Speakers')[0].details.productId
-    const productId1 = productDetails('Monitor', 'Speakers')[1].details.productId
-    expect(productId0.endsWith('123') && productId1.endsWith('123')).toBeTruthy();
+    const products3 = productDetails('Monitor', 'Speakers');
+    expect(products3.every((element) => element.details.productId.endsWith('123'))).toBeTruthy();
   });
 });
