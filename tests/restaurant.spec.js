@@ -60,7 +60,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // TESTE 1: Verifique se função `createMenu()` retorna um objeto que possui a chave `fetchMenu`, a qual tem como valor uma função.
     // const objetoRetornado = createMenu(); // Retorno: { fetchMenu: () => {}, ... }
     // ```
-    expect(typeof (firstOrder['fetchMenu'])).toBe('function');
+    expect(typeof (firstOrder.fetchMenu)).toBe('function');
 
     // TESTE 2: Verifique se 'objetoRetornado.fetchMenu()' retorna um objeto cujas chaves são somente `food` e `drink`, 
     // considerando que a função createMenu() foi chamada com o objeto: `{ food: {}, drink: {} }`.
@@ -68,7 +68,9 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // const objetoRetornado = createMenu({ food: {}, drink: {} });
     // objetoRetornado.fetchMenu() // Retorno: { food: {}, drink: {}}
     // ```
-    expect((createMenu({ food: {}, drink: {} })).fetchMenu()).toEqual({ food: {}, drink: {}});
+    const emptyMenu = { food: {}, drink: {} };
+    const emptyOrder = createMenu(emptyMenu);
+    expect(emptyOrder.fetchMenu()).toEqual({ food: {}, drink: {}});
 
     // TESTE 3: Verifique se o menu passado pra função createMenu() é idêntico ao menu recuperado pela função 'objetoRetornado.fetchMenu()'
     // ```
@@ -115,7 +117,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     firstOrder.order('agua');
     firstOrder.order('sopa');
     firstOrder.order('sashimi');
-    expect(firstOrder.consumption).toHaveLength(4);
+    expect(firstOrder.consumption).toEqual(['coxinha', 'agua', 'sopa', 'sashimi']);
     // Agora faça o TESTE 7 deste arquivo.
     // --------------------------------------------------------------------------------------
 
@@ -130,7 +132,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     secondOrder.order('coxinha');
     secondOrder.order('agua');
     secondOrder.order('coxinha');
-    expect(secondOrder.consumption).toHaveLength(3);
+    expect(secondOrder.consumption).toEqual(['coxinha', 'agua', 'coxinha']);
 
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
@@ -142,8 +144,11 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order('coxinha');
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
     // ```
-    expect(secondOrder.pay()).toEqual(11.7);
-    console.log(firstOrder, secondOrder);
+    const menuValues = Object.values(menuOptions);
+    const coxinhaPrice = menuValues[0].coxinha;
+    const aguaPrice = menuValues[1].agua;
+    const priceToPay = (coxinhaPrice + aguaPrice + coxinhaPrice) * 1.1;
+    expect(secondOrder.pay()).toBeCloseTo(priceToPay, 2);
   
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });

@@ -93,11 +93,10 @@
 // - retornará o valor somado acrescido de 10%.
 // DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createOrder = (consumption, request) => {
-  consumption.push(request);
-};
+const createOrder = (consumedItems, item) => consumedItems.push(item);
 
-const matchOrderMenu = (menuItems, menuPrices, orderItem, priceToPay) => {
+const matchOrderMenu = (menuItems, menuPrices, orderItem) => {
+  let priceToPay = 0;
   for (let i = 0; i < menuItems.length; i += 1) {
     if (orderItem === menuItems[i]) {
       priceToPay += menuPrices[i];
@@ -106,26 +105,27 @@ const matchOrderMenu = (menuItems, menuPrices, orderItem, priceToPay) => {
   return priceToPay;
 };
 
-const generateValueToPay = (menu, order) => {
+const generatePriceToPay = (menu, orderedItems) => {
   const menuOptions = Object.values(menu);
   let priceToPay = 0;
-  for (let index = 0; index < order.length; index += 1) {
+  for (let index = 0; index < orderedItems.length; index += 1) {
     for (let i = 0; i < menuOptions.length; i += 1) {
       const menuItems = Object.keys(menuOptions[i]);
       const menuPrices = Object.values(menuOptions[i]);
-      priceToPay = matchOrderMenu(menuItems, menuPrices, order[index], priceToPay);
+      priceToPay += matchOrderMenu(menuItems, menuPrices, orderedItems[index]);
     }
   }
-  return priceToPay;
+  priceToPay *= 1.1;
+  return Number(priceToPay.toFixed(2));
 };
 
-const createMenu = (object) => {
-  let consumptionArr = [];
+const createMenu = (menu) => {
+  let consumptionList = [];
   return {
-    fetchMenu: () => object,
-    consumption: consumptionArr,
-    order: (string) => createOrder(consumptionArr, string),
-    pay: () => generateValueToPay(object, consumptionArr),
+    fetchMenu: () => menu,
+    consumption: consumptionList,
+    order: (itemRequested) => createOrder(consumptionList, itemRequested),
+    pay: () => generatePriceToPay(menu, consumptionList),
   };
 };
 
