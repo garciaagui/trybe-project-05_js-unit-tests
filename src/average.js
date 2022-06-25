@@ -12,27 +12,22 @@
 */
 
 const verifyArrayValues = (array) => {
-  if (array.length === 0) { return undefined; }
-  
+  if (array.length === 0) return undefined;
   for (let i = 0; i < array.length; i += 1) {
-    if (typeof array[i] !== 'number') { return undefined; }
+    if (typeof array[i] !== 'number') return undefined;
   }
-
   return array;
 };
 
 const average = (array) => {
   const numbers = verifyArrayValues(array);
-  if (numbers === undefined) { return undefined; }
-
+  if (numbers === undefined) return undefined;
   let sum = 0;
-
-  for (let i = 0; i < numbers.length; i += 1) {
-    sum += numbers[i];
-  }
-  
+  numbers.forEach((number) => { sum += number; });
   const arrayAverage = Math.round(sum / array.length);
   return arrayAverage;
 };
+
+console.log(average([3, 4, 5]));
 
 module.exports = average;
