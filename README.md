@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 
-<h1 align="center">Projeto JS Unit Tests 🤔</h1>
+<h1 align="center">Projeto JS Unit Tests 🧪</h1>
 
 <details>
   <summary>Sumário</summary>
@@ -15,9 +15,9 @@
 </details>
 
 ## Sobre o Projeto
-Projeto **bônus** do curso de Desenvolvimento Web da [Trybe](https://www.betrybe.com/).
+Projeto 05 do curso de Desenvolvimento Web da [Trybe](https://www.betrybe.com/).
 
-Este projeto se trata da criação de funções e testes unitários para garantir que as implementações das funções estão corretas
+Este projeto se trata da criação de funções e testes unitários para garantir que as implementações das funções estão devidamente corretas.
 
 <p align="right"><a href="#readme-top">Voltar ao topo</a></p>
 
@@ -36,14 +36,22 @@ Este projeto se trata da criação de funções e testes unitários para garanti
 <p align="right"><a href="#readme-top">Voltar ao topo</a></p>
 
 ## Instruções
-EM CONSTRUÇÃO... 🚧
-<!-- Para rodar o projeto localmente, siga os passos abaixo.
+Para rodar o projeto localmente, siga os passos abaixo.
 
 1. Clone o repositório;
 ```
-git clone git@github.com:garciaagui/trybe-project-bonus_color-guess.git
+git clone git@github.com:garciaagui/trybe-project-05_js-unit-tests.git
 ```
-2. Vá para `index.html` e utilize a extensão [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) para abrir a página em seu navegador. -->
+2. Instale as dependências;
+```
+npm install
+```
+3. Para consultar os retornos das funções, vá para os arquivos `.js` disponíveis na pasta `src` e utilize a extensão [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner). A lógica e instruções de execução de cada função estão comentadas em seu respectivo arquivo.
+
+4. Para consultar os testes, utilize o comando `npm test`. É possível testar cada arquivo individualmente, conforme o exemplo abaixo.
+```
+npm test tests/average.spec.js
+```
 
 <p align="right"><a href="#readme-top">Voltar ao topo</a></p>
 
