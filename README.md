@@ -7,8 +7,8 @@
   <ol>
     <li><a href="#sobre-o-projeto">Sobre o Projeto</a></li>
     <li><a href="#tecnologias">Tecnologias</a></li>
+    <li><a href="#como-executar-o-projeto">Como Executar o Projeto</a></li>
     <li><a href="#habilidades">Habilidades</a></li>
-    <li><a href="#instruções">Instruções</a></li>
     <li><a href="#sobre-a-trybe">Sobre a Trybe</a></li>
     <li><a href="#contato">Contato</a></li>
   </ol>
@@ -19,12 +19,14 @@ Projeto 05 do curso de Desenvolvimento Web da [Trybe](https://www.betrybe.com/).
 
 Este projeto se trata da criação de funções e testes unitários para garantir que as implementações das funções estão devidamente corretas.
 
-<p align="right"><a href="#readme-top">Voltar ao topo</a></p>
+A lógica e instruções de execução de cada função estão comentadas em seu respectivo arquivo.
+
+<br/>
 
 ## Tecnologias
 [![JavaScript][javascript-badge]][javascript-url] [![Jest][jest-badge]][jest-url]
 
-<p align="right"><a href="#readme-top">Voltar ao topo</a></p>
+<br/>
 
 ## Habilidades
 <ul>
@@ -33,9 +35,9 @@ Este projeto se trata da criação de funções e testes unitários para garanti
   <li>Escrever testes e funções utilizando uma abordagem de desenvolvimento orientado a testes (TDD).</li>
 </ul>
 
-<p align="right"><a href="#readme-top">Voltar ao topo</a></p>
+<br/>
 
-## Instruções
+## Como Executar o Projeto
 Para rodar o projeto localmente, siga os passos abaixo.
 
 1. Clone o repositório;
@@ -53,19 +55,19 @@ npm install
 npm test tests/average.spec.js
 ```
 
-<p align="right"><a href="#readme-top">Voltar ao topo</a></p>
+<br/>
 
 ## Sobre a Trybe
 _"A [Trybe](https://www.betrybe.com/) é uma escola do futuro para qualquer pessoa que queira melhorar de vida e construir uma carreira de sucesso em tecnologia, onde a pessoa só paga quando conseguir um bom trabalho."_
 
 _"O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda introdução ao desenvolvimento de software, front-end, back-end, ciência da computação, engenharia de software, metodologias ágeis e habilidades comportamentais._"
 
-<p align="right"><a href="#readme-top">Voltar ao topo</a></p>
+<br/>
 
 ## Contato
-Guilherme Garcia - garciaguig@gmail.com
+Projeto desenvolvido por Guilherme Garcia. Seguem abaixo minhas redes sociais e meios de contato.
 
-[![Linkedin][linkedin-badge]][linkedin-url] [![GitHub][github-badge]][github-url] [![Instagram][instagram-badge]][instagram-url]
+[![Gmail][gmail-badge]][gmail-url] [![Linkedin][linkedin-badge]][linkedin-url] [![GitHub][github-badge]][github-url] [![Instagram][instagram-badge]][instagram-url]
 
 <p align="right"><a href="#readme-top">Voltar ao topo</a></p>
 
@@ -74,6 +76,8 @@ Guilherme Garcia - garciaguig@gmail.com
 [javascript-badge]: https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E
 [jest-url]: https://jestjs.io/
 [jest-badge]: https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white
+[gmail-badge]: https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white
+[gmail-url]: mailto:garciaguig@gmail.com
 [linkedin-badge]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
 [linkedin-url]: https://www.linkedin.com/in/garciaagui/
 [github-badge]: https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white
